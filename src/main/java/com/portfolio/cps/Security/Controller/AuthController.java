@@ -54,7 +54,7 @@ public class AuthController {
         return new ResponseEntity(new Mensaje("Usuario guardado"), HttpStatus.CREATED);
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<?> LoginUsuario(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
 
         String user = usuarioService.getByNombreUsuario(loginUsuario.getNombreUsuario()).get().getNombreUsuario();
